@@ -5,14 +5,8 @@ export default (api, options = {}) => {
     .then((data) => {
       return Promise.resolve(data);
     }, (response) => {
-      const { status } = response;
-      // 状态码处理
-      if (status === 401) {
-        console.error(`登录过期, status:${status}`);
-        return Promise.reject(response);
-      }else if (status >= 300) {
-        // console.error(`网络异常, status:${status}`);
-      }
-      return Promise.reject(`网络异常, status:${status}`);
+      const { status, statusText } = response;
+      console.log(`${statusText}, status:${status}`);   
+      return Promise.reject(`${statusText}, status:${status}`);
     });
 };

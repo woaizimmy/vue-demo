@@ -5,26 +5,9 @@
     body: para,   // 请求参数，格式为json，如 { id: 2, name: 'xxx' }
   });
 */
-import { isEmoji } from './emoji';
 import stringify from 'qs/lib/stringify';
 
 export default (api, options = {}) => {
-  if (options.body) {
-    for (const k in options.body) {
-      if (isEmoji(options.body[k])) {
-        return Promise.reject('不支持Emoji表情符');
-      }
-    }
-  }
-
-  if (options.params) {
-    for (const k in options.params) {
-      if (isEmoji(options.params[k])) {
-        return Promise.reject('不支持Emoji表情符');
-      }
-    }
-  }
-
   let url = api;
   // 跨域
   options.credentials = 'include';
@@ -61,12 +44,8 @@ export default (api, options = {}) => {
     .then((response) => {
       if (response.status === 200) {
         return response.json()
-          .then((json) => {
-              return Promise.resolve(json);
-          });
+          .then(json => Promise.resolve(json));
       }
-      return Promise.reject({
-        status: response.status,
-      });
+      return Promise.reject(response);
     });
 };
