@@ -4,7 +4,7 @@
     <div class="pd">
       <div class="mod">
         <div class="modTitle">
-          <span>Grid宫格</span>
+          <span>移动端Grid宫格</span>
         </div>
         <div class="appWrap">
           <grid>
@@ -22,7 +22,7 @@
     </div>
     <div class="mod2">
       <div class="modTitle">
-        <span>轮播框架</span>
+        <span>移动端轮播框架</span>
         <a href="#/index" class="more">more</a>
       </div>
       <div class="swiperWrap">
@@ -71,6 +71,12 @@ export default {
           name:'elementUI',
           logo:'but-down-core-roleuser',
           url:'#/element',
+        },
+        {
+          id:5,
+          name:'表格页',
+          logo:'but-down-core-roleuser',
+          url:'#/table',
         },
         {
           id:1024,

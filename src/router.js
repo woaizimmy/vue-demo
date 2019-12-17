@@ -44,6 +44,14 @@ let routes = [
     },
     hidden: true,
   },
+  {
+    path: '/table',
+    component: resolve => require(['./pages/table.vue'], resolve),
+    meta: {
+      title: '表格页',
+    },
+    hidden: true,
+  },
 
   // 列表页和详情页的路由示例
   /*
