@@ -52,6 +52,14 @@ let routes = [
     },
     hidden: true,
   },
+  {
+    path: '/login',
+    component: resolve => require(['./pages/login.vue'], resolve),
+    meta: {
+      title: '登录页',
+    },
+    hidden: true,
+  },
 
   // 列表页和详情页的路由示例
   /*

@@ -6,7 +6,10 @@ console.log('baseUrl', getBaseUrl());
 const baseUrl = getBaseUrl();
 
 const api = {
+  // 接口名称都是后台提供
   myApp: `${baseUrl}/app/myApp`,
+  editSave: `${baseUrl}/edit/save`,
+  login: `${baseUrl}/login`,
 };
 
 async function myApp() {
@@ -17,4 +20,20 @@ async function myApp() {
   return res;
 }
 
-export { api, myApp };
+async function editSave(params) {
+  const res = fetch(api.editSave, {
+    method: 'psot',
+    body: params
+  });
+  return res;
+}
+
+async function login(params) {
+  const res = fetch(api.login, {
+    method: 'psot',
+    body: params
+  });
+  return res;
+}
+
+export { api, myApp, editSave, login };

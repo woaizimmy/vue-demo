@@ -79,6 +79,12 @@ export default {
           url:'#/table',
         },
         {
+          id:6,
+          name:'登录页',
+          logo:'huifu',
+          url:'#/login',
+        },
+        {
           id:1024,
           name:'更多',
           logo:'wendang',
